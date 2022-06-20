@@ -17,6 +17,7 @@ export const Main = () => {
             <StyledText>Main</StyledText>
         </Container>
     )
+
 };
 
 export const Setting = () => {
