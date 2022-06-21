@@ -1,8 +1,8 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import Main from '../screens/Main';
-// import Setting from '../screens/Setting';
-import { Main, Setting} from '../screens/TabScreen';
+import Main from '../screens/Main';
+import Setting from '../screens/Setting';
+// import { Main, Setting} from '../screens/TabScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 

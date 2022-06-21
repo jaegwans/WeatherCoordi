@@ -15,7 +15,7 @@ margin-bottom: 10px;
 const Setting = () =>{
     return(
         <Container>
-            <StyledText>Home</StyledText>
+            <StyledText>setting</StyledText>
         </Container>
     )
 }

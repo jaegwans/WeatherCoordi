@@ -1,9 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, BackHandler } from 'react-native';
 import styled from 'styled-components/native';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './navigations/Tab'
 import React,{useEffect,useState} from 'react'
+import * as Location from 'expo-location'
+import axios from 'axios';
+
+
 
 
 const Container = styled.View`
@@ -18,8 +22,13 @@ text-align: center;
   
 `;
 
+
+
+
+
 function App() {
-  const [temp, setTemp] = useState()
+ 
+
   useEffect(
     ()=>{
 
