@@ -3,9 +3,10 @@ import { StyleSheet, Text, View, BackHandler } from 'react-native';
 import styled from 'styled-components/native';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './navigations/Tab'
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useLayoutEffect,useState} from 'react'
 import * as Location from 'expo-location'
 import axios from 'axios';
+import * as SplashScreen from 'expo-splash-screen';
 
 
 
@@ -29,7 +30,7 @@ text-align: center;
 function App() {
  
 
-  useEffect(
+  useLayoutEffect(
     ()=>{
 
     },[]

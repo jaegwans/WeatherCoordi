@@ -23,7 +23,8 @@
     "styled-components": "^5.3.5",
     "expo-location": "~14.2.2",
     "webpack-dev-server": "~3.11.0",
-    "@expo/webpack-config": "~0.16.2"
+    "@expo/webpack-config": "~0.16.2",
+    "expo-splash-screen": "~0.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
