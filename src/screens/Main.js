@@ -5,6 +5,8 @@ import * as Location from 'expo-location'
 import axios from 'axios';
 import { Alert } from 'react-native';
 import getLocation from '../getLocation'
+import Coordi from '../components/Coordi';
+
 
 const Container = styled.View`
 flex:1;
@@ -50,6 +52,7 @@ useEffect(() => {
         <Container>
             <StyledText>{weather.temp}℃</StyledText>
             <StyledText>{weather.condition}</StyledText>
+            <Coordi temp={weather.temp}></Coordi>
         </Container>
     )
 }
