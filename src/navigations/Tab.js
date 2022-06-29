@@ -15,11 +15,11 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => { // 기본 화면은 맨 위 스크린컴포넌트거나 네비게이터 속성에 inintialRouteName으로 지정된다.)
   return (
-    <Tab.Navigator> 
-    <Tab.Screen name="Main" component={Main} options={{headerTitle:'Weather Coordi',tabBarIcon: props => TabIcon({...props, name:'home'})}}
+    <Tab.Navigator options={{headerShown:false}}> 
+    <Tab.Screen name="Main" component={Main} options={{headerShown:false,headerTitle:'Weather Coordi',tabBarIcon: props => TabIcon({...props, name:'home'})}}
     
     /> 
-        <Tab.Screen name="Setting" component={Setting} options={{tabBarIcon: props => TabIcon({...props, name:'cog'})}}/>
+        <Tab.Screen name="Setting" component={Setting} options={{headerShown:false,tabBarIcon: props => TabIcon({...props, name:'cog'})}}/>
     
     </Tab.Navigator>
    

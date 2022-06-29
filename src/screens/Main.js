@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {Button} from 'react-native';
+import {Button,SafeAreaView} from 'react-native';
 import styled from 'styled-components';
 import * as Location from 'expo-location'
 import axios from 'axios';
@@ -8,7 +8,7 @@ import getLocation from '../getLocation'
 import Coordi from '../components/Coordi';
 
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
 flex:1;
 align-items: center;
 justify-content: center;

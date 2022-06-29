@@ -1,7 +1,12 @@
 import React from 'react';
 import {Button,View,Text,FlatList,StyleSheet,Alert,TouchableOpacity,Linking} from 'react-native';
-
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import styled from 'styled-components';
+import License from './License';
+
+
+// css
 
 const Container = styled.View`
 flex:1;
@@ -25,12 +30,13 @@ borderColor: 'gray',
 
 const StyledText = styled.Text`
 font-size: 20px;
-padding: 10px;
+padding: 15px;
 width: 100%;
 
 
 
 `;
+// data
 
 const data=[
     {id:1,title:'문의사항'},
@@ -39,7 +45,10 @@ const data=[
 ]
 
 
-const _onPress = (id) =>{
+
+//function
+
+const _onPress = (id,navi) =>{
     if(id == 1){
     try{
       Linking.openURL('mailto:skhu201811140@gmail.com') 
@@ -47,12 +56,13 @@ const _onPress = (id) =>{
         console.log(e)
     }
 }else{
-    alert("pressed"+ id);
+    navi.navigate('License')
+ 
 }
 }
 
-const Item = ({ title,id }) => (
-    <TouchableOpacity onPress={()=> _onPress(id)}>
+const Item = ({ title,id, navi }) => (
+    <TouchableOpacity onPress={()=> _onPress(id,navi)}>
    <View style={[ListContainer,{borderTopWidth: id==1 ? 1 : 0}]}  >
 
       <StyledText>{title}</StyledText>
@@ -62,12 +72,13 @@ const Item = ({ title,id }) => (
   
   );
 
-const Setting = () =>{
+const SettingHome = ({navigation}) =>{
 
-
-
+const navi = navigation;
+console.log(navigation)
+console.log(navi)
     const renderItem = ({ item }) => (
-    <Item title={item.title} id={item.id}  />
+    <Item title={item.title} id={item.id} navi = {navi}  />
      );
 
 
@@ -80,6 +91,23 @@ const Setting = () =>{
        
       />
         </Container>
+    )
+}
+
+const Stack = createStackNavigator();
+
+const Setting = () =>{
+
+    return(
+  
+
+    <Stack.Navigator>
+      <Stack.Screen name="SettingHome" component={SettingHome} options={{headerTitle:"Settings"}} />
+      <Stack.Screen name="License" component={License} />
+      
+    </Stack.Navigator>
+
+
     )
 }
 
