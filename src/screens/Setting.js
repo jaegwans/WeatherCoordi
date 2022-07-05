@@ -53,7 +53,7 @@ const _onPress = (id,navi) =>{
     try{
       Linking.openURL('mailto:skhu201811140@gmail.com') 
     }catch(e){
-        console.log(e)
+        console.log(e+err)
     }
 }else{
     navi.navigate('License')
@@ -75,8 +75,7 @@ const Item = ({ title,id, navi }) => (
 const SettingHome = ({navigation}) =>{
 
 const navi = navigation;
-console.log(navigation)
-console.log(navi)
+
     const renderItem = ({ item }) => (
     <Item title={item.title} id={item.id} navi = {navi}  />
      );

@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, BackHandler } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, BackHandler,SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './navigations/Tab'
@@ -28,17 +27,20 @@ text-align: center;
 
 
 function App() {
- 
 
+ 
   useLayoutEffect(
     ()=>{
-
+      StatusBar.setBackgroundColor('white');
+      StatusBar.setBarStyle('dark-content');
     },[]
   )
   return (
-    <NavigationContainer>
+   
+    <NavigationContainer style={{backGroundColor:"#ffffff"}}>
     <TabNavigation/>
   </NavigationContainer>
+
   )
 }
 

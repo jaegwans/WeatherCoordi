@@ -31,6 +31,7 @@ const getLocation = async() =>{
   );
   
   const temp = result.data.main.temp
+  console.log(result.data.name)
   const condition = result.data.weather[0].main
   console.log(temp)
   console.log(condition)
