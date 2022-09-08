@@ -11,7 +11,7 @@ import License from './License';
 const Container = styled.View`
 flex:1;
 /* align-items: stretch 가 기본값(자동 전체 값)
-flex-start end 로 할 시  */
+flex-start end 로 할 시  ?*/
 
 background-color: #ffffff;
 
@@ -22,7 +22,8 @@ const ListContainer = StyleSheet.create(
 backgroundColor: '#ffffff',
 borderBottomWidth: 1,
 
-borderColor: 'gray',
+borderColor: '#d9d9d9',
+
 
 
     }

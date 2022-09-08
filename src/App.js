@@ -1,11 +1,19 @@
-import { StatusBar, StyleSheet, Text, View, BackHandler,SafeAreaView } from 'react-native';
-import styled from 'styled-components/native';
-import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar, StyleSheet, Text, View, BackHandler,SafeAreaView,} from 'react-native';
+import styled,{ThemeProvider} from 'styled-components/native';
+import { NavigationContainer} from '@react-navigation/native';
 import TabNavigation from './navigations/Tab'
 import React,{useEffect,useLayoutEffect,useState} from 'react'
 import * as Location from 'expo-location'
 import axios from 'axios';
 import * as SplashScreen from 'expo-splash-screen';
+import theme from './theme'
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
 
 
@@ -28,19 +36,20 @@ text-align: center;
 
 function App() {
 
+
  
   useLayoutEffect(
     ()=>{
-      StatusBar.setBackgroundColor('white');
+      
       StatusBar.setBarStyle('dark-content');
     },[]
   )
   return (
-   
-    <NavigationContainer style={{backGroundColor:"#ffffff"}}>
+   <ThemeProvider theme={theme}>
+    <NavigationContainer>
     <TabNavigation/>
   </NavigationContainer>
-
+</ThemeProvider>
   )
 }
 

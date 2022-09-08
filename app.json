@@ -21,13 +21,13 @@
     "ios": {
       "supportsTablet": true,
       "backgroundColor": "#000000"
-  
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "kim.jaegwans"
     },
     "web": {
       "favicon": "./assets/favicon.png"

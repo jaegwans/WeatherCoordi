@@ -11,13 +11,16 @@ const Container = styled.View`
   align-items: center;
   flex:1;
   background-color: #FFFFFF;
-  
+  flex-wrap: wrap;
+
+
  
  
   `;
 const ClothText = styled.Text`
 font-size: 18px;
 font-weight: 400;
+align-items: flex-start;
 
 
 `;
@@ -25,6 +28,9 @@ const Cloth = styled.View`
 font-size: 18px;
 font-weight: 400;
 padding: 5px;
+display: flex;
+align-items: flex-start;
+
 
 
 `;
@@ -89,6 +95,8 @@ function Coordi(props) {
   console.log(returnCoordi(props.weather.temp))
   console.log(takeUmb(props.weather.condition))
 
+  const umb = takeUmb(props.weather.condition)
+
   return (
     <Container>
      
@@ -96,7 +104,8 @@ function Coordi(props) {
       return <Cloth><ClothText>{cloth}</ClothText></Cloth>
       }
       )}
-      { takeUmb ? <Cloth><ClothText>우산</ClothText></Cloth> : ""}
+
+      { umb ? <Cloth><ClothText>우산</ClothText></Cloth> : <></> }
     </Container>
   )
 }

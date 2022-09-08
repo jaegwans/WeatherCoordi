@@ -4,6 +4,8 @@ import Main from '../screens/Main';
 import Setting from '../screens/Setting';
 // import { Main, Setting} from '../screens/TabScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import theme from '../theme';
+
 
 
 const TabIcon = ({ name, size, color }) => {
@@ -14,8 +16,18 @@ const TabIcon = ({ name, size, color }) => {
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => { // 기본 화면은 맨 위 스크린컴포넌트거나 네비게이터 속성에 inintialRouteName으로 지정된다.)
+  
   return (
-    <Tab.Navigator options={{headerShown:false}}> 
+    <Tab.Navigator screenOptions={{tabBarActiveTintColor:'#ffffff',tabBarInactiveTintColor:'#b5b5b5',tabBarShowLabel:false,tabBarStyle:{
+      backgroundColor:theme.tab,
+      borderTopLeftRadius:5, 
+      borderTopRightRadius:5,
+      overflow: 'hidden',
+      marginTop: -40,
+      height: 55,
+      zIndex: 8,
+      
+      }}} options={{headerShown:false,}}> 
     <Tab.Screen name="Main" component={Main} options={{headerShown:false,headerTitle:'Weather Coordi',tabBarIcon: props => TabIcon({...props, name:'home'})}}
     
     /> 

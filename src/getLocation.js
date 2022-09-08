@@ -32,12 +32,13 @@ const getLocation = async() =>{
   
   const temp = result.data.main.temp
   console.log(result.data.name)
+  const name = result.data.name
   const condition = result.data.weather[0].main
   console.log(temp)
   console.log(condition)
   
 //   await setWeather({temp,condition}) // useState도 비동기적으로 작동한다 
-return ({temp:temp,condition:condition});
+return ({temp:temp,condition:condition,name:name});
   
   
     } catch(e){

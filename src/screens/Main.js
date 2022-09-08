@@ -11,6 +11,7 @@ const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #ffffff;
   justify-content: center;
+  margin-bottom:40;
  
   /* background-color: #ffffff; */
 `;
@@ -24,9 +25,8 @@ const MainContainer = styled.View`
 `;
 
 const MidContainer = styled.View`
-  
-
  border-bottom-width: 1px;
+ border-color: ${({theme}) => theme.main};
  width: 250px;
  align-self: center;
  
@@ -38,7 +38,7 @@ const SubContainer = styled.View`
   
   background-color: #ffffff;
  
-  
+  align-self: center;
 `;
 const StyledText = styled.Text`
   font-size: 18px;
@@ -58,7 +58,7 @@ const TempText = styled(StyledText)`
 `;
 
 const Main = () => {
-  const [weather, setWeather] = useState({ temp: 0, condition: "" });
+  const [weather, setWeather] = useState({ temp: 0, condition: "" ,name:""});
 
   useEffect(() => {
     async function wth() {
@@ -70,10 +70,13 @@ const Main = () => {
 
   return (
     <Container>
+      
       <MainContainer>
+        <StyledText style={{fontSize:25,fontWeight:'200'}}>{weather.name}</StyledText>
         <TempText>{Math.round(weather.temp)}º</TempText>
         <StyledText>{weather.condition}</StyledText>
       </MainContainer>
+
         <MidContainer></MidContainer>
       <SubContainer>
         <Coordi style={{flex:1}}weather={weather}></Coordi>
