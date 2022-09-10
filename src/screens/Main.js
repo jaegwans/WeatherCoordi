@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Button, SafeAreaView } from "react-native";
+import React, { useState, useEffect,useLayoutEffect } from "react";
+import { Button, SafeAreaView ,TouchableOpacity } from "react-native";
 import styled from "styled-components";
 import * as Location from "expo-location";
 import axios from "axios";
@@ -29,9 +29,7 @@ const MidContainer = styled.View`
  border-color: ${({theme}) => theme.main};
  width: 250px;
  align-self: center;
- 
-  
-`;
+ `;
 
 const SubContainer = styled.View`
   flex: 1;
@@ -58,9 +56,9 @@ const TempText = styled(StyledText)`
 `;
 
 const Main = () => {
-  const [weather, setWeather] = useState({ temp: 0, condition: "" ,name:""});
+  const [weather, setWeather] = useState({ temp: 0, condition: "" ,name:"",max:0,min:0});
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     async function wth() {
       const weatherValue = await getLocation();
       setWeather(weatherValue);
@@ -75,6 +73,7 @@ const Main = () => {
         <StyledText style={{fontSize:25,fontWeight:'200'}}>{weather.name}</StyledText>
         <TempText>{Math.round(weather.temp)}º</TempText>
         <StyledText>{weather.condition}</StyledText>
+        <StyledText style={{marginTop:10}}>최고:{weather.max}º 최저:{weather.min}º</StyledText>{/*최대 최저*/}
       </MainContainer>
 
         <MidContainer></MidContainer>

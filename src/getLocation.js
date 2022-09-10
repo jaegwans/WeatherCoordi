@@ -31,14 +31,16 @@ const getLocation = async() =>{
   );
   
   const temp = result.data.main.temp
-  console.log(result.data.name)
+  console.log(result.data.name+"+name")
   const name = result.data.name
   const condition = result.data.weather[0].main
-  console.log(temp)
+  console.log(result.data.main.temp_max+"+test");
   console.log(condition)
+  const max = Math.round(result.data.main.temp_max);
+  const min = Math.round(result.data.main.temp_min);
   
 //   await setWeather({temp,condition}) // useState도 비동기적으로 작동한다 
-return ({temp:temp,condition:condition,name:name});
+return ({temp:temp,condition:condition,name:name,min:min,max:max});
   
   
     } catch(e){
