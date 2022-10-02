@@ -22,6 +22,7 @@ const MainContainer = styled.View`
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
+  margin-top: 15px;
   
 `;
 
