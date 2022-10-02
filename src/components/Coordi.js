@@ -7,11 +7,14 @@ import { keyframes } from 'styled-components';
 
 //styled
 const Container = styled.View`
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
   flex:1;
   background-color: #FFFFFF;
+  width:300px;
   flex-wrap: wrap;
+  margin-top:10px;
 
 
  
@@ -25,9 +28,11 @@ align-items: flex-start;
 
 `;
 const Cloth = styled.View`
-font-size: 18px;
-font-weight: 400;
-padding: 5px;
+border-color: #7882A4;
+border-width: 1.5px;
+border-radius: 5px;
+padding: 7px 10px;
+margin: 5px;
 display: flex;
 align-items: flex-start;
 
@@ -41,7 +46,7 @@ const coordis ={
   above20 : ["얇은 가디건","긴팔 면바지","청바지"],
   above17 : ["얇은 니트","맨투맨","가디건","청바지",],
   above12 : ["자켓","가디건","야상","면바지","청바지"],
-  above9 : ["자켓","트랜치코트","야상","니트","청바지"],
+  above9 : ["자켓","트랜치코트","야상","니트","청바지","스타킹"],
   above5 : ["코트","가죽자켓","히트텍","니트","레깅스"],
   under4 : ["패딩","두꺼운코트","목도리","기모제품"],
 }

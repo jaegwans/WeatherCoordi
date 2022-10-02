@@ -11,7 +11,8 @@ const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #ffffff;
   justify-content: center;
-  margin-bottom:40;
+  align-items: center;
+  margin-bottom:40px;
  
   /* background-color: #ffffff; */
 `;
@@ -42,6 +43,16 @@ const StyledText = styled.Text`
   font-size: 18px;
 
  
+`;
+
+const MusicText = styled.Text`
+font-size: 15px;
+margin-top:10px;
+margin-bottom:5px;
+  
+`;
+const MusicContainer = styled.TouchableOpacity`
+  
 `;
 
 const TempText = styled(StyledText)`
@@ -77,6 +88,7 @@ const Main = () => {
       </MainContainer>
 
         <MidContainer></MidContainer>
+        <MusicText>현재 날씨에 맞는 음악 들으러 가기</MusicText>
       <SubContainer>
         <Coordi style={{flex:1}}weather={weather}></Coordi>
       </SubContainer>
