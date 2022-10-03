@@ -17,7 +17,7 @@ const Container = styled.SafeAreaView`
   /* background-color: #ffffff; */
 `;
 
-const MainContainer = styled.View`
+const MainContainer = styled.TouchableOpacity`
   flex: 0.5;
   align-items: center;
   justify-content: center;
@@ -68,7 +68,7 @@ const TempText = styled(StyledText)`
 
 `;
 
-const Main = () => {
+const Main = ({navigation}) => {
   const [weather, setWeather] = useState({ temp: 0, condition: "" ,name:"",max:0,min:0});
 
   useLayoutEffect(() => {
@@ -79,10 +79,18 @@ const Main = () => {
     wth();
   }, []);
 
+  const _onPressMain = (_navigation) =>{
+    _navigation.navigate('WeatherWeb');
+  }
+
+  const _onPressMusic = (_navigation) =>{
+    _navigation.navigate('MusicWeb');
+  }
+
   return (
     <Container>
       
-      <MainContainer>
+      <MainContainer onPress={()=>_onPressMain(navigation)}>
         <StyledText style={{fontSize:25,fontWeight:'200'}}>{weather.name}</StyledText>
         <TempText>{Math.round(weather.temp)}º</TempText>
         <StyledText>{weather.condition}</StyledText>
@@ -90,7 +98,7 @@ const Main = () => {
       </MainContainer>
 
         <MidContainer></MidContainer>
-        <MusicText>현재 날씨에 맞는 음악 들으러 가기</MusicText>
+        <TouchableOpacity onPress={() => _onPressMusic(navigation)}><MusicText>현재 날씨에 맞는 음악 들으러 가기</MusicText></TouchableOpacity>
       <SubContainer>
         <Coordi style={{flex:1}}weather={weather}></Coordi>
       </SubContainer>
