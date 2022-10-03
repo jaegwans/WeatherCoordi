@@ -31,6 +31,7 @@ const MidContainer = styled.View`
  border-color: ${({theme}) => theme.main};
  width: 250px;
  align-self: center;
+ margin-top:12px;
  `;
 
 const SubContainer = styled.View`

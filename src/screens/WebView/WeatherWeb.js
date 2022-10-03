@@ -3,7 +3,11 @@ import { View } from 'react-native'
 
 const WeatherWeb = () => {
   return (
-    <View></View>
+    <View>
+      <Text>
+        WeatherDetail
+      </Text>
+    </View>
   )
 }
 

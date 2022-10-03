@@ -1,6 +1,7 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Main from '../screens/Main';
+import MainStack from'../navigations/MainStack';
 import Setting from '../screens/Setting';
 // import { Main, Setting} from '../screens/TabScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -28,7 +29,7 @@ const TabNavigation = () => { // 기본 화면은 맨 위 스크린컴포넌트�
       zIndex: 8,
       
       }}} options={{headerShown:false,}}> 
-    <Tab.Screen name="Main" component={Main} options={{headerShown:false,headerTitle:'Weather Coordi',tabBarIcon: props => TabIcon({...props, name:'home'})}}
+    <Tab.Screen name="MainStack" component={MainStack} options={{headerShown:false,headerTitle:'Weather Coordi',tabBarIcon: props => TabIcon({...props, name:'home'})}}
     
     /> 
         <Tab.Screen name="Setting" component={Setting} options={{headerShown:false,tabBarIcon: props => TabIcon({...props, name:'cog'})}}/>
