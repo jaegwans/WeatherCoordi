@@ -4,11 +4,11 @@ import WeatherWeb from '../screens/WebView/WeatherWeb';
 import MusicWeb from '../screens/WebView/MusicWeb'
 
 const Stack = createStackNavigator();
-
+//comiit log
 function MainStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Main" component={Main} options={{headerShown:false}} />
+      <Stack.Screen name="Main" component={Main} options={{headerShown:false}} /> 
       <Stack.Screen name="WeatherWeb" component={WeatherWeb} />
       <Stack.Screen name="MusicWeb" component={MusicWeb} />
     </Stack.Navigator>
