@@ -1,13 +1,13 @@
 import React from 'react'
 import { View,Text } from 'react-native'
+import { WebView } from 'react-native-webview';
+
 
 const WeatherWeb = () => {
   return (
-    <View>
-      <Text>
-        WeatherDetail
-      </Text>
-    </View>
+    <WebView
+      source={{ uri: 'https://www.weather.go.kr/w/index.do' }}
+    />
   )
 }
 

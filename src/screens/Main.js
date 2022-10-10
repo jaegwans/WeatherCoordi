@@ -83,8 +83,8 @@ const Main = ({navigation}) => {
     _navigation.navigate('WeatherWeb');
   }
 
-  const _onPressMusic = (_navigation) =>{
-    _navigation.navigate('MusicWeb');
+  const _onPressMusic = (_navigation,_condition) =>{
+    _navigation.navigate('MusicWeb',{condition:_condition});
   }
 
   return (
@@ -98,7 +98,7 @@ const Main = ({navigation}) => {
       </MainContainer>
 
         <MidContainer></MidContainer>
-        <TouchableOpacity onPress={() => _onPressMusic(navigation)}><MusicText>현재 날씨에 맞는 음악 들으러 가기</MusicText></TouchableOpacity>
+        <TouchableOpacity onPress={() => _onPressMusic(navigation,weather.condition)}><MusicText>현재 날씨에 맞는 음악 들으러 가기</MusicText></TouchableOpacity>
       <SubContainer>
         <Coordi style={{flex:1}}weather={weather}></Coordi>
       </SubContainer>
