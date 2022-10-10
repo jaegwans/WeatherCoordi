@@ -10,11 +10,15 @@ const MusicWeb = ({ route }) => {
         Drizzle: "이슬비 내릴 때 듣기 좋은 노래",
         Rain: "비 올 때 듣기 좋은 노래",
         Snow: "눈 올 때 듣기 좋은 노래",
-        Atmosphere: "안개 낄 때 듣기 좋은 노래",
         Clear: "화창할 때 듣기 좋은 노래",
         Clouds: "흐릴 때 듣기 좋은 노래",
     }
-    const conditionString = conditionKoreanObject[route.params.condition]
+    let conditionString = conditionKoreanObject[route.params.condition]
+
+    if (conditionKoreanObject[route.params.condition] == undefined) {
+        conditionString = "안개 낄 때 듣기 좋은 노래"
+    }
+
     console.log(conditionKoreanObject[route.params.condition])
 
     return (

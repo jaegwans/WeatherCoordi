@@ -82,9 +82,9 @@ function Coordi(props) {
 
     return (
         <Container>
-            {returnCoordi(props.weather.temp).map((cloth) => {
+            {returnCoordi(props.weather.temp).map((cloth, index) => {
                 return (
-                    <Cloth>
+                    <Cloth key={index}>
                         <ClothText>{cloth}</ClothText>
                     </Cloth>
                 )
