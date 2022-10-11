@@ -6,6 +6,7 @@ import axios from "axios"
 import { Alert } from "react-native"
 import getLocation from "../getLocation"
 import Coordi from "../components/Coordi"
+import { ScrollView } from "react-native-gesture-handler"
 
 const Container = styled.SafeAreaView`
     flex: 1;
@@ -104,7 +105,13 @@ const Main = ({ navigation }) => {
                 <MusicText>현재 날씨에 맞는 음악 들으러 가기</MusicText>
             </TouchableOpacity>
             <SubContainer>
-                <Coordi style={{ flex: 1 }} weather={weather}></Coordi>
+                <ScrollView>
+                    <Coordi
+                        style={{ flex: 1 }}
+                        weather={weather}
+                        navi={navigation}
+                    ></Coordi>
+                </ScrollView>
             </SubContainer>
         </Container>
     )

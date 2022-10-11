@@ -21,7 +21,7 @@ const ClothText = styled.Text`
     font-weight: 400;
     align-items: flex-start;
 `
-const Cloth = styled.View`
+const Cloth = styled.TouchableOpacity`
     border-color: #7882a4;
     border-width: 1.5px;
     border-radius: 5px;
@@ -84,7 +84,12 @@ function Coordi(props) {
         <Container>
             {returnCoordi(props.weather.temp).map((cloth, index) => {
                 return (
-                    <Cloth key={index}>
+                    <Cloth
+                        key={index}
+                        onPress={() => {
+                            props.navi.navigate("CoordiWeb", { cloth: cloth })
+                        }}
+                    >
                         <ClothText>{cloth}</ClothText>
                     </Cloth>
                 )
