@@ -7,6 +7,7 @@ import { Alert } from "react-native"
 import getLocation from "../getLocation"
 import Coordi from "../components/Coordi"
 import { ScrollView } from "react-native-gesture-handler"
+import * as Animatable from "react-native-animatable"
 
 const Container = styled.SafeAreaView`
     flex: 1;
@@ -38,8 +39,8 @@ const SubContainer = styled.View`
     flex: 1;
 
     background-color: #ffffff;
-
-    align-self: center;
+    align-items: center;
+    justify-self: flex-end;
 `
 const StyledText = styled.Text`
     font-size: 18px;
@@ -102,16 +103,20 @@ const Main = ({ navigation }) => {
             <TouchableOpacity
                 onPress={() => _onPressMusic(navigation, weather.condition)}
             >
-                <MusicText>현재 날씨에 맞는 음악 들으러 가기</MusicText>
+                <Animatable.View
+                    animation="pulse"
+                    iterationCount="infinite"
+                    direction="alternate"
+                >
+                    <MusicText>현재 날씨에 어울리는 음악 들으러 가기</MusicText>
+                </Animatable.View>
             </TouchableOpacity>
             <SubContainer>
-                <ScrollView>
-                    <Coordi
-                        style={{ flex: 1 }}
-                        weather={weather}
-                        navi={navigation}
-                    ></Coordi>
-                </ScrollView>
+                <Coordi
+                    style={{ flex: 1 }}
+                    weather={weather}
+                    navi={navigation}
+                ></Coordi>
             </SubContainer>
         </Container>
     )

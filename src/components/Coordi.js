@@ -1,5 +1,11 @@
 import React, { useState } from "react"
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
+import {
+    Text,
+    View,
+    StyleSheet,
+    TouchableOpacity,
+    ScrollView,
+} from "react-native"
 import styled from "styled-components/native"
 import PropTypes from "prop-types"
 import { keyframes } from "styled-components"
@@ -7,17 +13,20 @@ import { keyframes } from "styled-components"
 
 //styled
 const Container = styled.View`
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    flex: 1;
     background-color: #ffffff;
     width: 300px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 60px;
 `
+
+const Scroll = styled.ScrollView``
+
 const ClothText = styled.Text`
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 400;
     align-items: flex-start;
 `
@@ -26,7 +35,7 @@ const Cloth = styled.TouchableOpacity`
     border-width: 1.5px;
     border-radius: 5px;
     padding: 7px 10px;
-    margin: 5px;
+    margin: 6px 5px;
     display: flex;
     align-items: flex-start;
 `
@@ -81,28 +90,33 @@ function Coordi(props) {
     const umb = takeUmb(props.weather.condition)
 
     return (
-        <Container>
-            {returnCoordi(props.weather.temp).map((cloth, index) => {
-                return (
-                    <Cloth
-                        key={index}
-                        onPress={() => {
-                            props.navi.navigate("CoordiWeb", { cloth: cloth })
-                        }}
-                    >
-                        <ClothText>{cloth}</ClothText>
-                    </Cloth>
-                )
-            })}
+        <Scroll>
+            <Container>
+                {returnCoordi(props.weather.temp).map((cloth, index) => {
+                    return (
+                        <Cloth
+                            key={index}
+                            onPress={() => {
+                                console.log(props.navi)
+                                props.navi.navigate("CoordiWeb", {
+                                    cloth: cloth,
+                                })
+                            }}
+                        >
+                            <ClothText>{cloth}</ClothText>
+                        </Cloth>
+                    )
+                })}
 
-            {umb ? (
-                <Cloth>
-                    <ClothText>우산</ClothText>
-                </Cloth>
-            ) : (
-                <></>
-            )}
-        </Container>
+                {umb ? (
+                    <Cloth>
+                        <ClothText>우산</ClothText>
+                    </Cloth>
+                ) : (
+                    <></>
+                )}
+            </Container>
+        </Scroll>
     )
 }
 
